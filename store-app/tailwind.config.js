@@ -8,6 +8,9 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  daisyui: {
+    themes: [],
+  }, // This closing brace was missing in the previous response
+  plugins: [require("daisyui")],
 }
 
