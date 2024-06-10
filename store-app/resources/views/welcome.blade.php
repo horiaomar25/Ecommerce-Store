@@ -14,7 +14,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="font-sans antialiased dark:text-white/50 min-h-screen flex items-center justify-center">
+<body class="font-sans antialiased dark:text-white/50 min-h-screen flex items-center justify-center bg-red-300">
     <div class=" text-black/50 dark:text-white/50 p-8 rounded-lg  w-full max-w-md">
         <div class="flex flex-col items-center">
             <header class="mb-8 w-full text-center flex justify-center items-center">
@@ -27,19 +27,18 @@
                     @else
                     
                     @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="border border-black dark:border-white rounded-md px-3 py-2 text-black dark:text-white ring-1 ring-transparent transition bg-white dark:bg-gray-700 hover:bg-red-600 hover:text-white focus:outline-none focus-visible:ring-[#FF2D20]">
-                        Register
-                    </a>
+                    
                     @endif
                     @endauth
                 </nav>
                 @endif
             </header>
-            <main class="w-full">
+            <main >
                 <x-guest-layout>
                     <!-- Session Status -->
                     <x-auth-session-status class="mb-4" :status="session('status')" />
-              <h1 class="text-black text-center">Ecommerce Store</h1>
+                    
+              
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -70,7 +69,10 @@
                             @endif
                         </div>
 
-                        <div class="flex items-center justify-center">
+                        <div class="flex items-center justify-evenly">
+                            <a href="{{ route('register') }}" class="ms-3 bg-white text-black border border-black p-2 w-36 hover:bg-red-500 text-center">
+                        Register
+                    </a>
                             <button class="ms-3 bg-white text-black border border-black p-2 w-36 hover:bg-red-500">
                                 {{ __('Log in') }}
                             </button>
