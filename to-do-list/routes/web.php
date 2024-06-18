@@ -18,6 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/dashboard', [ChirpController::class, 'index'])->name('dashboard');
     Route::post('/chirps', [ChirpController::class, 'store'])->name('chirps.store');
+    Route::delete('/chirps/{chirp}', [ChirpController::class, 'destroy'])->name('chirps.destroy');
 });
  
 Route::resource('chirps', ChirpController::class)
